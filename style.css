@@ -8,8 +8,8 @@
 }
 
 body {
-  background: #081b29;
-  color: aliceblue;
+  background: #ededed;
+  color: #222222;
 }
 
 .header {
@@ -26,11 +26,21 @@ body {
 }
 
 .logo {
+  width: 6ch;
+  height: 30px;
+  animation: typing 1s steps(6), blink 0.5s step-end infinite alternate;
+  white-space: nowrap;
+  overflow: hidden;
+  border-right: 3px solid;
+  background-color: #ededed;
+
   position: relative;
   font-size: 25px;
-  color: aliceblue;
-  text-decoration: none;
+
+  /* text-decoration: none; */
   font-weight: 600;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
 }
 
 .logo::before {
@@ -40,14 +50,14 @@ body {
   right: 0;
   width: 100%;
   height: 100%;
-  background: #081b29;
-  animation: showRight 1s ease forwards;
+  background: transparent;
+  animation: typing 2s steps(6), blink(1s) step-end infinite alternate;
   animation-delay: 0.4s;
 }
 
 .navbar a {
   font-size: 18px;
-  color: aliceblue;
+  color: #ededed;
   text-decoration: none;
   font-weight: 500;
   margin-left: 35px;
@@ -55,72 +65,90 @@ body {
 }
 .navbar a:hover,
 .navbar a.active {
-  color: #00abf0;
+  color: #ff5733;
 }
 
 .home {
   height: 100vh;
-  background: url(My\ project-1.jpg) no-repeat;
+  background-image: url("alessio-soggetti-wH3POmZAsio.jpg");
   background-size: cover;
   background-position: center;
   display: flex;
   align-items: center;
-  padding: 0 10%;
+  padding: 0;
 }
 
 .home-content {
+  position: absolute;
   max-width: 600px;
+  margin-left: 10%;
 }
 .home-content h1 {
+  background-color: hsla(310, 100%, 50%, 1);
+  background-image: radial-gradient(
+      at 40% 20%,
+      hsla(25, 100%, 50%, 1) 0px,
+      transparent 50%
+    ),
+    radial-gradient(at 80% 0%, hsla(189, 100%, 50%, 1) 0px, transparent 50%),
+    radial-gradient(at 80% 100%, hsla(288, 100%, 50%, 1) 0px, transparent 50%),
+    radial-gradient(at 0% 0%, hsla(311, 100%, 50%, 1) 0px, transparent 50%);
+  animation: hueRotate 14s alternate infinite;
+
   position: relative;
+
   font-size: 56px;
   font-weight: 700;
   line-height: 1.2;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
 }
-.home-content h1::before {
+/* .home-content h1::before {
   content: "";
   position: absolute;
   top: 0;
   right: 0;
   width: 100%;
   height: 100%;
-  background: #081b29;
+  background: #ededed;
   animation: showRight 2s ease forwards;
   animation-delay: 1s;
-}
+} */
 .home-content h3 {
   position: relative;
   font-size: 32px;
   font-weight: 700;
-  color: #00abf0;
+  color: #ff5733;
 }
-.home-content h3::before {
+/* .home-content h3::before {
   content: "";
   position: absolute;
   top: 0;
   right: 0;
   width: 100%;
   height: 100%;
-  background: #081b29;
+  background: #ededed;
   animation: showRight 1.5s ease forwards;
   animation-delay: 2s;
-}
+} */
 .home-content p {
   position: relative;
   font-size: 16px;
   margin: 20px 0 40px;
+  font-weight: 300;
+  color: #ededed;
 }
-.home-content p::before {
+/* .home-content p::before {
   content: "";
   position: absolute;
   top: 0;
   right: 0;
   width: 100%;
   height: 100%;
-  background: #081b29;
+  background: #ededed;
   animation: showRight 1.8s ease forwards;
   animation-delay: 2.5s;
-}
+} */
 .home-content .btn-box {
   position: relative;
   display: flex;
@@ -128,18 +156,18 @@ body {
   width: 345px;
   height: 50px;
 }
-.home-content .btn-box::before {
+/* .home-content .btn-box::before {
   content: "";
   position: absolute;
   top: 0;
   right: 0;
   width: 100%;
   height: 100%;
-  background: #081b29;
+  background: #ededed;
   animation: showRight 1.2s ease forwards;
   animation-delay: 3s;
   z-index: 2;
-}
+} */
 .btn-box a {
   position: relative;
   display: inline-flex;
@@ -147,11 +175,11 @@ body {
   align-items: center;
   width: 150px;
   height: 100%;
-  background: #00abf0;
-  border: 2px solid #00abf0;
+  background: #ff5733;
+  border: 2px solid#ff5733;
   border-radius: 8px;
   font-size: 19px;
-  color: #081b29;
+  color: #ededed;
   text-decoration: none;
   font-weight: 600;
   letter-spacing: 1px;
@@ -160,20 +188,20 @@ body {
   transition: 0.5s;
 }
 .btn-box a:hover {
-  color: #00abf0;
+  color: #ff5733;
 }
 
 .btn-box a:nth-child(2) {
   background: transparent;
-  color: #00abf0;
+  color: #ff5733;
 }
 
 .btn-box a:nth-child(2):hover {
-  color: #081b29;
+  color: #ededed;
 }
 
 .btn-box a:nth-child(2)::before {
-  background: #00abf0;
+  background: #ff5733;
 }
 
 .btn-box a::before {
@@ -183,7 +211,7 @@ body {
   left: 0;
   width: 0;
   height: 100%;
-  background: #081b29;
+  background: #ededed;
   z-index: -1;
   transition: 0.5s;
 }
@@ -192,23 +220,24 @@ body {
 }
 .home-sci {
   position: absolute;
+  margin-left: 10%;
   bottom: 40px;
   width: 170px;
   display: flex;
   justify-content: space-between;
 }
-.home-sci::before {
+/* .home-sci::before {
   content: "";
   position: absolute;
   top: 0;
   right: 0;
   width: 100%;
   height: 100%;
-  background: #081b29;
+  background: #ededed;
   animation: showRight 1s ease forwards;
   animation-delay: 4s;
   z-index: 2;
-}
+} */
 .home-sci a {
   position: relative;
   display: inline-flex;
@@ -217,10 +246,10 @@ body {
   width: 40px;
   height: 40px;
   background: transparent;
-  border: 2px solid #00abf0;
+  border: 2px solid#ff5733;
   border-radius: 50%;
   font-size: 20px;
-  color: #00abf0;
+  color: #ff5733;
   text-decoration: none;
   z-index: 1;
   overflow: hidden;
@@ -233,17 +262,17 @@ body {
   left: 0;
   width: 0;
   height: 100%;
-  background: #00abf0;
+  background: #ff5733;
   z-index: -1;
   transition: 0.5s;
 }
 .home-sci a:hover {
-  color: #081b29;
+  color: #ededed;
 }
 .home-sci a:hover::before {
   width: 100%;
 }
-.home-imgHover {
+/* .home-imgHover {
   position: absolute;
   top: 0;
   right: 30px;
@@ -254,13 +283,24 @@ body {
   animation: manipActiveHover 0.1s forwards;
   animation-delay: 4s;
   pointer-events: none;
+} */
+.img {
+  position: relative;
+  height: 400px;
+  width: auto;
+  left: 65%;
+  border-radius: 33% 67% 70% 30% / 30% 30% 70% 70%;
+  transition: border-radius 1s ease-in-out;
+}
+.img:hover {
+  border-radius: 67% 33% 68% 32% / 54% 73% 27% 46%;
 }
 
 .home-imgHover:hover {
-  background: #081b29;
+  background: #ededed;
   opacity: 0.8;
 }
-.home-imgHover::after {
+/* .home-imgHover::after {
   content: "";
   position: absolute;
   top: 0;
@@ -268,11 +308,11 @@ body {
 
   width: 140%;
   height: 100%;
-  background: #081b29;
+  background: #ededed;
   animation: showRight 1s ease forwards;
   animation-delay: 4s;
   z-index: 69;
-}
+} */
 /* KEYFRAMES ANIMATION */
 @keyframes showRight {
   100% {
@@ -282,5 +322,26 @@ body {
 @keyframes manipActiveHover {
   100% {
     pointer-events: auto;
+  }
+}
+@keyframes typing {
+  from {
+    width: 0;
+  }
+}
+@keyframes blink {
+  50% {
+    border-color: transparent;
+  }
+}
+@keyframes hueRotate {
+  0% {
+    filter: hue-rotate(279deg);
+  }
+  50% {
+    fill: hueRotate(197deg);
+  }
+  100% {
+    filter: hue-rotate(12deg);
   }
 }
