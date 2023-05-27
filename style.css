@@ -187,8 +187,15 @@ body {
   overflow: hidden;
   transition: 0.5s;
 }
-.btn-box a:hover {
+.btn-box a:nth-child(1) {
+  background: transparent;
   color: #ff5733;
+}
+.btn-box a:nth-child(1):hover {
+  color: #ededed;
+}
+.btn-box a:nth-child(1)::before {
+  background: #ff5733;
 }
 
 .btn-box a:nth-child(2) {
@@ -211,7 +218,7 @@ body {
   left: 0;
   width: 0;
   height: 100%;
-  background: #ededed;
+  background: transparent;
   z-index: -1;
   transition: 0.5s;
 }
